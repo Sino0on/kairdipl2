@@ -25,8 +25,8 @@
             <a href="{% url 'home' %}"><button class="productDetail__back">&lt; Назад</button></a>
             <div class="productDetail__content">
                 <div class="productDetail__gallery" style="justify-content: center; display: flex;">
-                    {% if product.pic.0 %}
-                    <img class="main-image" src="{{ product.pic.0 }}" alt="{{ product.name }}">
+                    {% if product.pic.url %}
+                    <img class="main-image" src="{{ product.pic.url }}" alt="{{ product.name }}">
                     {% else %}
                     <img class="main-image" src="{% static 'src/template_01.png' %}" alt="{{ product.name }}">
                     {% endif %}
@@ -44,7 +44,7 @@
                         {{ product.description }}
                     </p>
 
-                    <a href="https://api.whatsapp.com/send?phone=+996507003033&text=Здравствуйте, пишу вам из сайта home.ques.kg. Товар - {{ product_name }}\nКод - {{ product.id }}" class="whatsapp-btn">
+                    <a href="https://api.whatsapp.com/send?phone=+996507003033&text=Здравствуйте, пишу вам по поводу Товар - {{ product_name }}\nКод - {{ product.id }}" class="whatsapp-btn">
                         <img src="{% static 'src/assets/image.png' %}" alt="WhatsApp">
                         Оформить покупку через Whatsapp
                     </a>
@@ -57,12 +57,12 @@
                 {% for i in products %}
                 <a href="{% url 'product_detail' i.id %}" class="product__cart">
                     {% if i.pic.0 %}
-                    <img src="{{ i.pic.0 }}" alt="#" style="">
+                    <img src="{{ i.pic.url }}" alt="#" style="">
                     {% else %}
                     <img src="{% static 'src/template_01.png' %}" alt="#">
                     {% endif %}
                     <div class="product__info">
-                        <h5>{{ i.type }}</h5>
+<!--                        <h5>{{ i.type }}</h5>-->
                         <h4>{{ i.name }}</h4>
                         <p>{{ i.price }} сом</p>
                     </div>

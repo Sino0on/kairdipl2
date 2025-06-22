@@ -52,12 +52,12 @@
                 {% for i in products %}
                 <a href="{% url 'product_detail' i.id %}" class="product__cart">
                     {% if i.pic.0 %}
-                    <img src="{{ i.pic.0 }}" alt="#" style="    max-height: none;">
+                    <img src="{{ i.pic.url }}" alt="#" style="    max-height: none;">
                     {% else %}
                     <img src="{% static 'src/template_01.png' %}" alt="#">
                     {% endif %}
                     <div class="product__info">
-                        <h5>{{ i.type }}</h5>
+<!--                        <h5>{{ i.type }}</h5>-->
                         <h4>{{ i.name }}</h4>
                         <p>{{ i.price }} сом</p>
                     </div>
