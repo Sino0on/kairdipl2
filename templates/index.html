@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Детствкая одежда</title>
+    <title>Детская одежда</title>
     <link rel="stylesheet" href="{% static './css/style.css' %}">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
 
@@ -18,7 +18,7 @@
                 <a href="/">
                 <div class="header__left">
 <!--                     <img src="{% static './src/assets/header/log.svg' %}" alt="logo">-->
-                     <p style="color: #F9F7DF;">Детсткая одежда</p>
+                     <p style="color: #F9F7DF;">Детская одежда</p>
                  </div>
                     </a>
                 <img src="{% static './src/assets/header/search.svg' %}" alt="search">
@@ -28,9 +28,9 @@
     <section class="hero" style="background: url({% static 'src/bg.jpg' %})  center no-repeat; background-size: cover;">
         <div class="container">
             <div class="hero__content">
-                <h2>Детсткая одежда</h2>
+                <h2>Детская одежда</h2>
                 <p>
-                    Детсткая одежда - лучшее для ваших детей
+                    Детская одежда - лучшее для ваших детей
                 </p>
             </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="product__content">
                 {% for i in products %}
                 <a href="{% url 'product_detail' i.id %}" class="product__cart">
-                    {% if i.pic.0 %}
+                    {% if i.pic %}
                     <img src="{{ i.pic.url }}" alt="#" style="    max-height: none;">
                     {% else %}
                     <img src="{% static 'src/template_01.png' %}" alt="#">
